@@ -1,0 +1,21 @@
+name: Windows build and behavioral tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: windows-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Build
+        shell: powershell
+        run: ./scripts/build.ps1
+      - name: Behavioral tests (clipboard tests require an available Windows desktop)
+        shell: powershell
+        run: ./scripts/test.ps1

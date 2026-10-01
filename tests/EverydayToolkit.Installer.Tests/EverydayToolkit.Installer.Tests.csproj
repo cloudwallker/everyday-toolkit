@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0-windows</TargetFramework><Nullable>disable</Nullable></PropertyGroup>
+  <ItemGroup><Compile Include="../../installer/InstallerEngine.cs" Link="InstallerEngine.cs" /><Compile Include="../../installer/Registration.cs" Link="Registration.cs" /><Compile Include="../../installer/UninstallPolicy.cs" Link="UninstallPolicy.cs" /></ItemGroup>
+</Project>

@@ -1,0 +1,19 @@
+name: 功能建议 / Feature request
+description: 说明日常流程和所需改善 / Describe the workflow and improvement
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: 当前流程和具体障碍 / Current workflow and obstacle
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: 希望怎样改善复制、找回、整理、复用 / Desired improvement to copying, finding, organizing or reusing
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: 合成示例与替代方法 / Synthetic example and alternatives

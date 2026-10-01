@@ -1,0 +1,30 @@
+name: 问题反馈 / Bug report
+description: 使用合成数据描述可复现问题 / Report a reproducible issue using synthetic data
+body:
+  - type: markdown
+    attributes:
+      value: 请勿附真实剪贴板、常用语、数据库、密钥或办公截图。 Do not include private content or credentials.
+  - type: input
+    id: environment
+    attributes:
+      label: 环境 / Environment
+      description: Windows、应用版本、缩放、多显示器 / Windows and app versions, scaling, displays
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / Steps
+      description: 合成内容、来源与目标应用、记录状态、按住的修饰键 / Synthetic content, source and target apps, recording status, held modifiers
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 预期与实际 / Expected and actual
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 脱敏错误类别或合成截图 / Sanitized error category or synthetic screenshot
