@@ -55,10 +55,29 @@ public partial class MainWindow : Window
         controller = new ToolkitController(store, settingsStore, settings, draft => this.directoryPreferences.SaveCurrentSettings(draft, dataRoot, settingsStore));
         paste.CaptureTarget();
         InitializeComponent();
+        SizeChanged += (_, _) => UpdateCompactLayout();
+        UpdateCompactLayout();
         HistoryList.ItemsSource = historyRows;
         SnippetList.ItemsSource = snippets;
         UpdateRecordingLabel();
         UpdateHistoryActions(null);
+    }
+
+    private void UpdateCompactLayout()
+    {
+        var compact = Width < 920;
+        foreach (var pair in new[] { (HistoryLayout, HistoryPreviewPanel), (SnippetLayout, SnippetPreviewPanel), (CleanupLayout, CleanupResultPanel) })
+        {
+            var (layout, preview) = pair;
+            layout.ColumnDefinitions[0].Width = new GridLength(compact ? 1 : layout == CleanupLayout ? 1 : 2, GridUnitType.Star);
+            layout.ColumnDefinitions[1].Width = new GridLength(compact ? 0 : 18);
+            layout.ColumnDefinitions[2].Width = compact ? new GridLength(0) : new GridLength(layout == CleanupLayout ? 1 : 3, GridUnitType.Star);
+            layout.RowDefinitions[0].Height = new GridLength(compact ? 2 : 1, GridUnitType.Star);
+            layout.RowDefinitions[1].Height = compact ? new GridLength(3, GridUnitType.Star) : new GridLength(0);
+            Grid.SetColumn(preview, compact ? 0 : 2);
+            Grid.SetRow(preview, compact ? 1 : 0);
+            preview.Margin = compact ? new Thickness(0, 12, 0, 0) : new Thickness(0);
+        }
     }
 
     private async void Window_Loaded(object sender, RoutedEventArgs e)

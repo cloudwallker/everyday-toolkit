@@ -6,6 +6,10 @@
 
 Everyday Toolkit is an open-source Windows 11 x64 productivity app with text and static-image clipboard history, favorites, reusable text snippets and text cleanup, using a Chinese quick panel and local storage.
 
+快捷面板提供适应主题的较大控件与可见键盘焦点；窗口宽度小于 920 逻辑像素时，历史、常用语和文本清洗的预览上下排列，方便查看与操作。
+
+The quick panel has larger theme-aware controls and visible keyboard focus. History, snippet and cleanup previews stack vertically below 920 logical pixels.
+
 ## 三个工具
 
 | 工具 | 能力 |

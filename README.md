@@ -12,6 +12,10 @@ English | [中文](README_ZH.md) · [User guide (Chinese)](docs/user-guide.md) �
 
 The screenshots show the actual Chinese interface with synthetic content. [Dark theme](docs/screenshots/clipboard-dark.png) · [Snippets](docs/screenshots/snippets.png) · [Text cleanup](docs/screenshots/cleanup.png).
 
+The quick panel uses larger, theme-aware controls and visible keyboard focus. Below 920 logical pixels, history, snippets and text-cleanup previews stack vertically so both content and actions remain reachable.
+
+快捷面板提供适应主题的较大控件与可见键盘焦点；窗口宽度小于 920 逻辑像素时，历史、常用语和文本清洗的预览上下排列，方便查看与操作。
+
 ## Features
 
 | Tool | Capabilities |
